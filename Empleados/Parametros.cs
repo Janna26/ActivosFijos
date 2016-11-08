@@ -30,6 +30,7 @@ namespace Mantenimientos
 
         private void consultarPorCriterio()
         {
+            /*Esto es un comment de prueba*/
          /*   var parametro = from Param in db.Parametroes
                            where (Param.añoProceso.ToString().Contains(txtNAnoProceso.Text) ||
                            Param.mesProceso.ToString().Contains(tx.Text) ||
