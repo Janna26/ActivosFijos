@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0be9d85c9f44d1fb5866fc9972dc187" Name="Diagram1">
+        <EntityTypeShape EntityType="ActivosFijosModel.Empleado" Width="1.75" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivosFijosModel.ActivoFijo" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.CalculoDepreciacion" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Departamento" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Estatu" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.MetodoDepreciacion" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Parametro" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Proveedor" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.TipoActivo" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.TipoPago" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Ubicacion" Width="1.5" PointX="2.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

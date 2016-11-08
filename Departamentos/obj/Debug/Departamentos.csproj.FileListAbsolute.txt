@@ -1,0 +1,21 @@
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\bin\Debug\Departamentos.exe.config
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\bin\Debug\Departamentos.exe
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\bin\Debug\Departamentos.pdb
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.csprojResolveAssemblyReference.cache
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.Form1.resources
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.Properties.Resources.resources
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.csproj.GenerateResource.Cache
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.exe
+c:\users\jaquino.cc\documents\visual studio 2015\Projects\Departamentos\Departamentos\obj\Debug\Departamentos.pdb
+D:\Proyecto\Departamentos\Departamentos\bin\Debug\Departamentos.exe.config
+D:\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.exe
+D:\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.pdb
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\bin\Debug\Departamentos.exe.config
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.exe
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.pdb
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\bin\Debug\Departamentos.exe
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\bin\Debug\Departamentos.pdb
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.csprojResolveAssemblyReference.cache
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.Departamento.resources
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.Properties.Resources.resources
+C:\Users\Janna Aquino R\Documents\Proyecto\Departamentos\Departamentos\obj\Debug\Departamentos.csproj.GenerateResource.Cache

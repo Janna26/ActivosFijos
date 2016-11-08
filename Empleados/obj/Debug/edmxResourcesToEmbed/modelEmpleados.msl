@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ActivosFijosModelStoreContainer" CdmEntityContainer="ActivosFijosEntities">
+    <EntitySetMapping Name="Empleadoes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="tipoPersona" ColumnName="tipoPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivoFijoes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.ActivoFijo">
+        <MappingFragment StoreEntitySet="ActivoFijo">
+          <ScalarProperty Name="depreciacionAcumulada" ColumnName="depreciacionAcumulada" />
+          <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="tipoActivo" ColumnName="tipoActivo" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalculoDepreciacions">
+      <EntityTypeMapping TypeName="ActivosFijosModel.CalculoDepreciacion">
+        <MappingFragment StoreEntitySet="CalculoDepreciacion">
+          <ScalarProperty Name="cuentaDepreciacon" ColumnName="cuentaDepreciacon" />
+          <ScalarProperty Name="cuentaCompra" ColumnName="cuentaCompra" />
+          <ScalarProperty Name="depreciacionAcumulada" ColumnName="depreciacionAcumulada" />
+          <ScalarProperty Name="montoDepreciado" ColumnName="montoDepreciado" />
+          <ScalarProperty Name="fechaProceso" ColumnName="fechaProceso" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentoes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Estatu">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetodoDepreciacions">
+      <EntityTypeMapping TypeName="ActivosFijosModel.MetodoDepreciacion">
+        <MappingFragment StoreEntitySet="MetodoDepreciacion">
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametroes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Parametro">
+        <MappingFragment StoreEntitySet="Parametro">
+          <ScalarProperty Name="metodoDepreciacion" ColumnName="metodoDepreciacion" />
+          <ScalarProperty Name="RNC" ColumnName="RNC" />
+          <ScalarProperty Name="descripcionCalculada" ColumnName="descripcionCalculada" />
+          <ScalarProperty Name="mesProceso" ColumnName="mesProceso" />
+          <ScalarProperty Name="añoProceso" ColumnName="añoProceso" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedors">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="tipoPersona" ColumnName="tipoPersona" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoActivoes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.TipoActivo">
+        <MappingFragment StoreEntitySet="TipoActivo">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="cuentaContableDepreciacion" ColumnName="cuentaContableDepreciacion" />
+          <ScalarProperty Name="cuentaContableCompra" ColumnName="cuentaContableCompra" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPagoes">
+      <EntityTypeMapping TypeName="ActivosFijosModel.TipoPago">
+        <MappingFragment StoreEntitySet="TipoPago">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubicacions">
+      <EntityTypeMapping TypeName="ActivosFijosModel.Ubicacion">
+        <MappingFragment StoreEntitySet="Ubicacion">
+          <ScalarProperty Name="Edificio" ColumnName="Edificio" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
