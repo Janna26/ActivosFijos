@@ -42,12 +42,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cedula" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="Departamento" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Cedula" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Departamento" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="tipoPersona" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="fechaIngreso" Type="date" />
-          <Property Name="Estado" Type="varchar" MaxLength="25" />
+          <Property Name="Estado" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="Estatus">
           <Key>
@@ -115,6 +115,15 @@
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Edificio" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rol" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="ActivosFijosModelStoreContainer">
           <EntitySet Name="ActivoFijo" EntityType="Self.ActivoFijo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CalculoDepreciacion" EntityType="Self.CalculoDepreciacion" Schema="dbo" store:Type="Tables" />
@@ -127,6 +136,7 @@
           <EntitySet Name="TipoActivo" EntityType="Self.TipoActivo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoPago" EntityType="Self.TipoPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -137,12 +147,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cedula" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Departamento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipoPersona" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaIngreso" Type="DateTime" Precision="0" />
-          <Property Name="Estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ActivosFijosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
@@ -156,6 +166,7 @@
           <EntitySet Name="TipoActivoes" EntityType="ActivosFijosModel.TipoActivo" />
           <EntitySet Name="TipoPagoes" EntityType="ActivosFijosModel.TipoPago" />
           <EntitySet Name="Ubicacions" EntityType="ActivosFijosModel.Ubicacion" />
+          <EntitySet Name="Usuarios" EntityType="ActivosFijosModel.Usuario" />
         </EntityContainer>
         <EntityType Name="ActivoFijo">
           <Key>
@@ -254,6 +265,15 @@
           <Property Name="Estado" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Edificio" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Rol" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -378,6 +398,16 @@
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="ActivosFijosModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

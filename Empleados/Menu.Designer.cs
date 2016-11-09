@@ -45,6 +45,7 @@
             this.btnTipoDeActivo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnActivosFijos = new System.Windows.Forms.ToolStripMenuItem();
             this.calculoDepreciaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -110,7 +111,8 @@
             this.btnProveedores,
             this.btnTipoDeActivo,
             this.btnActivosFijos,
-            this.calculoDepreciaciónToolStripMenuItem});
+            this.calculoDepreciaciónToolStripMenuItem,
+            this.tipoDePagoToolStripMenuItem});
             this.menuMantenimiento.Name = "menuMantenimiento";
             this.menuMantenimiento.Size = new System.Drawing.Size(106, 20);
             this.menuMantenimiento.Text = "Mantenimientos";
@@ -156,6 +158,7 @@
             this.btnTipoDeActivo.Name = "btnTipoDeActivo";
             this.btnTipoDeActivo.Size = new System.Drawing.Size(186, 22);
             this.btnTipoDeActivo.Text = "Tipo de Activo";
+            this.btnTipoDeActivo.Click += new System.EventHandler(this.btnTipoDeActivo_Click);
             // 
             // btnActivosFijos
             // 
@@ -170,6 +173,13 @@
             this.calculoDepreciaciónToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.calculoDepreciaciónToolStripMenuItem.Text = "Cálculo Depreciación";
             this.calculoDepreciaciónToolStripMenuItem.Click += new System.EventHandler(this.btncalculoDepreciacionAF_Click);
+            // 
+            // tipoDePagoToolStripMenuItem
+            // 
+            this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
+            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.tipoDePagoToolStripMenuItem.Text = "Tipo de Pago";
+            this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -208,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnTipoDeActivo;
         private System.Windows.Forms.ToolStripMenuItem btnActivosFijos;
         private System.Windows.Forms.ToolStripMenuItem calculoDepreciaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDePagoToolStripMenuItem;
     }
 }

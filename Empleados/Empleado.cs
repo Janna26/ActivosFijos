@@ -11,7 +11,7 @@ namespace Mantenimientos
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Empleado
     {
         public int Id { get; set; }
@@ -19,14 +19,7 @@ namespace Mantenimientos
         public string Cedula { get; set; }
         public string Departamento { get; set; }
         public string tipoPersona { get; set; }
-        public DateTime? fechaIngreso { get; set; }
+        public Nullable<System.DateTime> fechaIngreso { get; set; }
         public string Estado { get; set; }
-
-
-
-
-
-
-
     }
 }

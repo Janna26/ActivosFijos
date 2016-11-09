@@ -67,5 +67,17 @@ namespace Mantenimientos
         {
 
         }
+
+        private void tipoDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoDePago tipoPago = new TipoDePago();
+            tipoPago.Show();
+        }
+
+        private void btnTipoDeActivo_Click(object sender, EventArgs e)
+        {
+            TipoDeActivo tipoActivo = new TipoDeActivo();
+            tipoActivo.Show();
+        }
     }
 }

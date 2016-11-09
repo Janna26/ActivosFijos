@@ -12,12 +12,11 @@ namespace Mantenimientos
     using System;
     using System.Collections.Generic;
     
-    public partial class Ubicacion
+    public partial class Usuario
     {
         public int Id { get; set; }
-        public string Descripcion { get; set; }
-        public string Estado { get; set; }
-        public string Direccion { get; set; }
-        public string Edificio { get; set; }
+        public string Usuario1 { get; set; }
+        public string Clave { get; set; }
+        public string Rol { get; set; }
     }
 }

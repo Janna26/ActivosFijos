@@ -89,7 +89,7 @@ namespace Mantenimientos
 
         private void consultarPorCriterio()
         {
-            var ubicacion = from ubic in db.Departamentoes
+            var ubicacion = from ubic in db.Ubicacions
                                where (ubic.Id.ToString().Contains(txtBuscarUbic.Text) ||
                                ubic.Descripcion.ToString().Contains(txtBuscarUbic.Text) ||
                                ubic.Estado.ToString().Contains(txtBuscarUbic.Text))

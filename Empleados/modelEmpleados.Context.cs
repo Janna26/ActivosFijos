@@ -36,5 +36,6 @@ namespace Mantenimientos
         public virtual DbSet<TipoActivo> TipoActivoes { get; set; }
         public virtual DbSet<TipoPago> TipoPagoes { get; set; }
         public virtual DbSet<Ubicacion> Ubicacions { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
     }
 }
