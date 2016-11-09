@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -83,7 +84,7 @@ namespace Mantenimientos
                  return;
              }
 
-            TipoPago tipoPago = new TipoPago();
+            TipoPagoes tipoPago = new TipoPagoes();
             tipoPago.Descripcion = cmbDescTipoPago.Text;
             tipoPago.Estado = cmbEstado.Text;
 

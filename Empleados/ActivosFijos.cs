@@ -1,4 +1,5 @@
 ﻿using Mantenimientos;
+using global::Empleados;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace Mantenimientos
 {
     public partial class ActivosFijos : Form
     {
+        
         ActivosFijosEntities db = new ActivosFijosEntities();
         public ActivosFijos()
         {
@@ -38,7 +40,7 @@ namespace Mantenimientos
             }
 
 
-            ActivoFijo activoFijo = new ActivoFijo();
+            ActivoFijoes activoFijo = new ActivoFijoes();
             activoFijo.Descripcion = cmbDescActivoF.Text;
             activoFijo.Departamento = cmbDeptActivoF.Text;
             activoFijo.Ubicacion = cmbUbicActivoF.Text;

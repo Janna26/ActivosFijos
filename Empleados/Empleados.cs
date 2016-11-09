@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -59,7 +60,7 @@ namespace Mantenimientos
                 return;
             }
             
-            Empleado empleado = new Empleado();
+            Empleadoes empleado = new Empleadoes();
             empleado.Cedula = txtCedulaEmp.Text;
             empleado.Nombre = txtNombreEmp.Text;
             empleado.Departamento = txtDeptEmp.Text;
@@ -178,7 +179,7 @@ namespace Mantenimientos
         {
 
             DataGridViewRow row = this.dgvEmpleados.SelectedRows[0];
-            Empleado empleado = new Empleado();
+            Empleadoes empleado = new Empleadoes();
             //txtIdEmp.Text = row.Cells[0].Value.ToString();
             txtNombreEmp.Text = row.Cells[1].Value.ToString();
             txtCedulaEmp.Text = row.Cells[2].Value.ToString();

@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivoFijo.cs">
+    <Compile Include="ActivoFijoes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="ActivosFijos.cs">
@@ -66,13 +66,13 @@
     <Compile Include="ActivosFijos.Designer.cs">
       <DependentUpon>ActivosFijos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalculoDepreciacion.cs">
+    <Compile Include="CalculoDepreciacions.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
-    <Compile Include="Departamento.cs">
+    <Compile Include="Departamentoes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
-    <Compile Include="Empleado.cs">
+    <Compile Include="Empleadoes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Empleados.cs">
@@ -87,7 +87,7 @@
     <Compile Include="Departamentos.Designer.cs">
       <DependentUpon>Departamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estatu.cs">
+    <Compile Include="Estatus.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -102,10 +102,11 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MetodoDepreciacion.cs">
+    <Compile Include="MetodoDepreciacions.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
-    <Compile Include="Parametro.cs">
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Parametroes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Parametros.cs">
@@ -114,10 +115,10 @@
     <Compile Include="Parametros.Designer.cs">
       <DependentUpon>Parametros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedor.cs">
+    <Compile Include="Proveedors.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
-    <Compile Include="TipoActivo.cs">
+    <Compile Include="TipoActivoes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoDeActivo.cs">
@@ -132,10 +133,7 @@
     <Compile Include="TipoDePago.Designer.cs">
       <DependentUpon>TipoDePago.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoPago.cs">
-      <DependentUpon>modelEmpleados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ubicacion.cs">
+    <Compile Include="TipoPagoes.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Ubicaciones.cs">
@@ -167,7 +165,10 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs">
+    <Compile Include="Ubicacions.cs">
+      <DependentUpon>modelEmpleados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ActivosFijos.resx">

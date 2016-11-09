@@ -18,6 +18,12 @@ namespace Mantenimientos
             InitializeComponent();
         }
 
+        private void restablecerLogin()
+        {
+            txtUsuario.Text = "";
+            txtClave.Text = "";
+            txtUsuario.Focus();
+        }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string usuario = this.txtUsuario.Text;
@@ -26,34 +32,33 @@ namespace Mantenimientos
             if (usuario == "" || clave == "")
             {
                 MessageBox.Show("Debe completar ambos campos");
-                txtUsuario.Focus();
                 return;
             }
-            else {
-                /*var usuarioRetornado = from user in db.Usuarios
-                                where (user.Usuario1.ToString().Contains(txtUsuario.Text) &&
-                                user.Clave.ToString().Contains(txtClave.Text))
 
-                                select user;
-                                */
-                var usuarioRetornado = db.Usuarios.FirstOrDefault(a=>a.Usuario1.Equals(usuario));
-                if (usuarioRetornado != null)
-                {
-                    if (usuarioRetornado.Clave.Equals(clave))
-                    {
-                        MessageBox.Show("Felicidades Janna, Eres Dura");
-                    }
-                    else {
-                        MessageBox.Show("Fracase -_-");
-                    }
-                }
-                else {
-                    MessageBox.Show("NO encontre na de naaa!!");
-                }
+            /*var usuarioRetornado = from user in db.Usuarios
+                            where (user.Usuario1.ToString().Contains(txtUsuario.Text) &&
+                            user.Clave.ToString().Contains(txtClave.Text))
 
+                            select user;
+                            */
+            var usuarioRetornado = db.Usuarios.FirstOrDefault(a => a.Usuario1.Equals(usuario));
 
+            //si el usuario no es encontrado
+            if (usuarioRetornado == null)
+            {
+                MessageBox.Show("Usuario no encontrado");
+                return;
             }
 
+            //si la clave no coincide
+            if (!usuarioRetornado.Clave.Equals(clave))
+            {
+                MessageBox.Show("Password invalido");
+                return;
+            }
+
+            //finalmente si todo salio bien
+            new Mantenimientos.Menu().Show();
         }
     }
 }

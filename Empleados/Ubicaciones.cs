@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace Mantenimientos
                 return;
             }
 
-            Ubicacion ubicacion = new Ubicacion();
+            Ubicacions ubicacion = new Ubicacions();
             ubicacion.Descripcion = txtDescripcionUbic.Text;
             ubicacion.Direccion = txtDireccionUbic.Text;
             ubicacion.Edificio = txtEdificioUbic.Text;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,7 +67,7 @@ namespace Mantenimientos
                 return;
             }
 
-            Proveedor proveedor = new Proveedor();
+            Proveedors proveedor = new Proveedors();
             proveedor.Nombre = txtNombreProveedor.Text;
             proveedor.Cedula = txtCedulaProveedor.Text;
             proveedor.tipoPersona = cmbTipoPersonaProveedor.Text;
@@ -212,7 +213,7 @@ namespace Mantenimientos
         private void dgvProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgvProveedores.SelectedRows[0];
-            Proveedor proveedor = new Proveedor();
+            Proveedors proveedor = new Proveedors();
             txtNombreProveedor.Text = row.Cells[1].Value.ToString();
             txtCedulaProveedor.Text = row.Cells[2].Value.ToString();
             cmbTipoPersonaProveedor.Text = row.Cells[3].Value.ToString();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -27,7 +28,7 @@ namespace Mantenimientos
                 return;
             }
 
-            Departamento departamento = new Departamento();
+            Departamentoes departamento = new Departamentoes();
             departamento.Descripcion = txtDescripcionDept.Text;
             departamento.Estado = cmbEstadoDept.Text;
 
