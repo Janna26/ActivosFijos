@@ -9,7 +9,7 @@ namespace Mantenimientos
 {
     public partial class ActivosFijos : Form
     {
-        
+
         ActivosFijosEntities db = new ActivosFijosEntities();
         public ActivosFijos()
         {
@@ -33,16 +33,17 @@ namespace Mantenimientos
 
         private void btnGuardarActivo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDepAcumAF.Text))
+            if (string.IsNullOrWhiteSpace(cmbDescActivoF.Text))
             {
                 MessageBox.Show("La descripción del activo fijo es obligatoria ", "Error");
                 return;
             }
 
-
             ActivoFijoes activoFijo = new ActivoFijoes();
+
             activoFijo.Descripcion = cmbDescActivoF.Text;
             activoFijo.Departamento = cmbDeptActivoF.Text;
+            activoFijo.tipoActivo = cmbTAcAF.Text;
             activoFijo.Ubicacion = cmbUbicActivoF.Text;
             activoFijo.valorCompra = Convert.ToInt32(txtValorCompraActivoF.Text);
             activoFijo.fechaRegistro = dateTimeActivoF.Value;
@@ -51,6 +52,7 @@ namespace Mantenimientos
 
             db.ActivoFijoes.Add(activoFijo);
             db.SaveChanges();
+
 
             MessageBox.Show("Datos guardados correctamente");
 
@@ -80,6 +82,12 @@ namespace Mantenimientos
 
         private void ActivosFijos_Load(object sender, EventArgs e)
         {
+            cmbTAcAF.SelectedIndex = 0;
+            cmbDescActivoF.SelectedIndex = 0;
+            cmbDeptActivoF.SelectedIndex = 0;
+            cmbUbicActivoF.SelectedIndex = 0;
+            LlenarGrid();
+
 
         }
 
@@ -122,10 +130,11 @@ namespace Mantenimientos
         private void consultarPorCriterio()
         {
             var activoFijo = from af in db.ActivoFijoes
-                               where (af.Id.ToString().StartsWith(cmbDeptActivoF.Text) ||
-                               af.Descripcion.ToString().Contains(cmbDeptActivoF.Text) ||
-                               af.Ubicacion.ToString().Contains(cmbUbicActivoF.Text))||
-                               af.tipoActivo.ToString().Contains(txtValorCompraActivoF.Text)
+                             where (af.Id.ToString().Contains(txtBuscarActivoF.Text) ||
+                             af.Descripcion.ToString().Contains(txtBuscarActivoF.Text) ||
+                             af.Ubicacion.ToString().Contains(txtBuscarActivoF.Text)) ||
+                             af.tipoActivo.ToString().Contains(txtBuscarActivoF.Text) ||
+                             af.Departamento.ToString().Contains(txtBuscarActivoF.Text)
 
                              select af;
             dgvActivosFijos.DataSource = activoFijo.ToList();
@@ -133,7 +142,7 @@ namespace Mantenimientos
 
         private void btnBuscarActivoF_Click(object sender, EventArgs e)
         {
-
+            consultarPorCriterio();
         }
     }
 }

@@ -31,12 +31,13 @@ namespace Empleados
         public virtual DbSet<Empleadoes> Empleadoes { get; set; }
         public virtual DbSet<Estatus> Estatus { get; set; }
         public virtual DbSet<MetodoDepreciacions> MetodoDepreciacions { get; set; }
-        public virtual DbSet<Parametroes> Parametroes { get; set; }
         public virtual DbSet<Proveedors> Proveedors { get; set; }
         public virtual DbSet<TipoActivoes> TipoActivoes { get; set; }
         public virtual DbSet<TipoPagoes> TipoPagoes { get; set; }
         public virtual DbSet<Ubicacions> Ubicacions { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Permiso> Permiso { get; set; }
+        public virtual DbSet<TipoActivo> TipoActivo { get; set; }
+        public virtual DbSet<Parametro> Parametro { get; set; }
     }
 }

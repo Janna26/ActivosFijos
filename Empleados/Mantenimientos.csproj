@@ -106,7 +106,7 @@
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Parametroes.cs">
+    <Compile Include="Parametro.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Parametros.cs">
@@ -119,6 +119,9 @@
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="Proveedors.cs">
+      <DependentUpon>modelEmpleados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoActivo.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoActivoes.cs">

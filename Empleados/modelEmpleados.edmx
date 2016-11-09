@@ -65,16 +65,15 @@
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="Parametroes">
+        <EntityType Name="Parametro">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="añoProceso" Type="int" Nullable="false" />
-          <Property Name="mesProceso" Type="int" Nullable="false" />
-          <Property Name="descripcionCalculada" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="depreciacionCalculada" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="RNC" Type="int" Nullable="false" />
           <Property Name="metodoDepreciacion" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="fechaDepreciacion" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Permiso">
           <Key>
@@ -102,6 +101,16 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
           <Property Name="Cedula" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="tipoPersona" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoActivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cuentaContableCompra" Type="int" Nullable="false" />
+          <Property Name="cuentaContableDepreciacion" Type="int" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoActivoes">
@@ -172,9 +181,10 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
           <EntitySet Name="Empleadoes" EntityType="Self.Empleadoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MetodoDepreciacions" EntityType="Self.MetodoDepreciacions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Parametroes" EntityType="Self.Parametroes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parametro" EntityType="Self.Parametro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedors" EntityType="Self.Proveedors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoActivo" EntityType="Self.TipoActivo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoActivoes" EntityType="Self.TipoActivoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoPagoes" EntityType="Self.TipoPagoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ubicacions" EntityType="Self.Ubicacions" Schema="dbo" store:Type="Tables" />
@@ -205,7 +215,6 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
           <EntitySet Name="Empleadoes" EntityType="ActivosFijosModel.Empleadoes" />
           <EntitySet Name="Estatus" EntityType="ActivosFijosModel.Estatus" />
           <EntitySet Name="MetodoDepreciacions" EntityType="ActivosFijosModel.MetodoDepreciacions" />
-          <EntitySet Name="Parametroes" EntityType="ActivosFijosModel.Parametroes" />
           <EntitySet Name="Proveedors" EntityType="ActivosFijosModel.Proveedors" />
           <EntitySet Name="TipoActivoes" EntityType="ActivosFijosModel.TipoActivoes" />
           <EntitySet Name="TipoPagoes" EntityType="ActivosFijosModel.TipoPagoes" />
@@ -216,6 +225,8 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Permiso" EntitySet="Permiso" />
           </AssociationSet>
+          <EntitySet Name="TipoActivo" EntityType="ActivosFijosModel.TipoActivo" />
+          <EntitySet Name="Parametro" EntityType="ActivosFijosModel.Parametro" />
         </EntityContainer>
         <EntityType Name="ActivoFijoes">
           <Key>
@@ -276,17 +287,6 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="Parametroes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="añoProceso" Type="Int32" Nullable="false" />
-          <Property Name="mesProceso" Type="Int32" Nullable="false" />
-          <Property Name="descripcionCalculada" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="RNC" Type="Int32" Nullable="false" />
-          <Property Name="metodoDepreciacion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Proveedors">
           <Key>
@@ -349,6 +349,26 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
           <End Type="ActivosFijosModel.Usuarios" Role="Usuarios" Multiplicity="*" />
           <End Type="ActivosFijosModel.Permiso" Role="Permiso" Multiplicity="*" />
         </Association>
+        <EntityType Name="TipoActivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cuentaContableCompra" Type="Int32" Nullable="false" />
+          <Property Name="cuentaContableDepreciacion" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Parametro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="depreciacionCalculada" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RNC" Type="Int32" Nullable="false" />
+          <Property Name="metodoDepreciacion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="fechaDepreciacion" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -417,18 +437,6 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
               <MappingFragment StoreEntitySet="MetodoDepreciacions">
                 <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Parametroes">
-            <EntityTypeMapping TypeName="ActivosFijosModel.Parametroes">
-              <MappingFragment StoreEntitySet="Parametroes">
-                <ScalarProperty Name="metodoDepreciacion" ColumnName="metodoDepreciacion" />
-                <ScalarProperty Name="RNC" ColumnName="RNC" />
-                <ScalarProperty Name="descripcionCalculada" ColumnName="descripcionCalculada" />
-                <ScalarProperty Name="mesProceso" ColumnName="mesProceso" />
-                <ScalarProperty Name="añoProceso" ColumnName="añoProceso" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -502,6 +510,28 @@ advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene de
               <ScalarProperty Name="Id" ColumnName="UsuarioId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="TipoActivo">
+            <EntityTypeMapping TypeName="ActivosFijosModel.TipoActivo">
+              <MappingFragment StoreEntitySet="TipoActivo">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="cuentaContableDepreciacion" ColumnName="cuentaContableDepreciacion" />
+                <ScalarProperty Name="cuentaContableCompra" ColumnName="cuentaContableCompra" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parametro">
+            <EntityTypeMapping TypeName="ActivosFijosModel.Parametro">
+              <MappingFragment StoreEntitySet="Parametro">
+                <ScalarProperty Name="fechaDepreciacion" ColumnName="fechaDepreciacion" />
+                <ScalarProperty Name="metodoDepreciacion" ColumnName="metodoDepreciacion" />
+                <ScalarProperty Name="RNC" ColumnName="RNC" />
+                <ScalarProperty Name="depreciacionCalculada" ColumnName="depreciacionCalculada" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

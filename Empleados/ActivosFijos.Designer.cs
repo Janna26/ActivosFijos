@@ -123,7 +123,14 @@
             // 
             // cmbTAcAF
             // 
+            this.cmbTAcAF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTAcAF.FormattingEnabled = true;
+            this.cmbTAcAF.Items.AddRange(new object[] {
+            "Mobiliario",
+            "Tecnologico",
+            "Elementos de transporte",
+            "Maquinaria",
+            "Instalaciones técnicas"});
             this.cmbTAcAF.Location = new System.Drawing.Point(197, 176);
             this.cmbTAcAF.Name = "cmbTAcAF";
             this.cmbTAcAF.Size = new System.Drawing.Size(139, 21);
@@ -131,7 +138,13 @@
             // 
             // cmbUbicActivoF
             // 
+            this.cmbUbicActivoF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUbicActivoF.FormattingEnabled = true;
+            this.cmbUbicActivoF.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
             this.cmbUbicActivoF.Location = new System.Drawing.Point(197, 141);
             this.cmbUbicActivoF.Name = "cmbUbicActivoF";
             this.cmbUbicActivoF.Size = new System.Drawing.Size(139, 21);
@@ -139,7 +152,13 @@
             // 
             // cmbDeptActivoF
             // 
+            this.cmbDeptActivoF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDeptActivoF.FormattingEnabled = true;
+            this.cmbDeptActivoF.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
             this.cmbDeptActivoF.Location = new System.Drawing.Point(197, 97);
             this.cmbDeptActivoF.Name = "cmbDeptActivoF";
             this.cmbDeptActivoF.Size = new System.Drawing.Size(139, 21);
@@ -147,7 +166,12 @@
             // 
             // cmbDescActivoF
             // 
+            this.cmbDescActivoF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDescActivoF.FormattingEnabled = true;
+            this.cmbDescActivoF.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
             this.cmbDescActivoF.Location = new System.Drawing.Point(197, 61);
             this.cmbDescActivoF.Name = "cmbDescActivoF";
             this.cmbDescActivoF.Size = new System.Drawing.Size(139, 21);

@@ -25,6 +25,33 @@ namespace Mantenimientos
         {
             // esta parte es un poco ninja
 
+            if (usuarioLogeado.Rol == "Administrador")
+            {
+                var todosLosPermisos = db.Permiso.ToList();
+
+                foreach (var permiso in todosLosPermisos)
+                {
+                    System.Reflection.MethodInfo Show = null; // Aqui se guardara el metodo "Show" del formulario
+
+                    Object InstanciaDinamica = System.Reflection.Assembly.GetExecutingAssembly().CreateInstance("Mantenimientos." + permiso.Permiso1);
+
+                    if (InstanciaDinamica == null) // Si lo guardaste mal en la base de datos no lo agrego
+                        continue;
+
+                    var Shows = (InstanciaDinamica.GetType().GetMethods()).Where(a => a.Name == "Show").ToList();
+       
+                    foreach (var s in Shows)
+                    {
+                        // En caso de que no tenga parametros..
+                        if (s.GetParameters().Length == 0)
+                            Show = s;
+                    }
+
+                    menuMantenimiento.DropDownItems.Add(permiso.Permiso1, null, (s, k) => { Show.Invoke(InstanciaDinamica, null); });
+                }
+
+                return;
+            }
 
             var permisos = usuarioLogeado.Permiso.ToList(); // aqui buscamos los menues a los cual es usuario puede acceder
 

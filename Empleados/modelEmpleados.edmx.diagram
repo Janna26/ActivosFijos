@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="ActivosFijosModel.Empleadoes" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.Estatus" Width="1.5" PointX="4.75" PointY="4.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.MetodoDepreciacions" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ActivosFijosModel.Parametroes" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.Proveedors" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.TipoActivoes" Width="1.5" PointX="6.75" PointY="6.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.TipoPagoes" Width="1.5" PointX="2.75" PointY="7.75" />
@@ -19,6 +18,8 @@
         <EntityTypeShape EntityType="ActivosFijosModel.Usuarios" Width="1.5" PointX="8.75" PointY="3.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.Permiso" Width="1.5" PointX="11" PointY="4" />
         <AssociationConnector Association="ActivosFijosModel.PermisoUsuario" />
+        <EntityTypeShape EntityType="ActivosFijosModel.TipoActivo" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Parametro" Width="1.5" PointX="7.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

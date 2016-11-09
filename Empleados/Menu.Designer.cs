@@ -37,7 +37,6 @@
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -95,18 +94,9 @@
             // 
             // menuMantenimiento
             // 
-            this.menuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tipoDePagoToolStripMenuItem});
             this.menuMantenimiento.Name = "menuMantenimiento";
             this.menuMantenimiento.Size = new System.Drawing.Size(106, 20);
             this.menuMantenimiento.Text = "Mantenimientos";
-            // 
-            // tipoDePagoToolStripMenuItem
-            // 
-            this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
-            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tipoDePagoToolStripMenuItem.Text = "Tipo de Pago";
-            this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -139,6 +129,5 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuMantenimiento;
-        private System.Windows.Forms.ToolStripMenuItem tipoDePagoToolStripMenuItem;
     }
 }
