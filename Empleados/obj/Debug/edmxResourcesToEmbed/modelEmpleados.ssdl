@@ -37,12 +37,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Cedula" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="Departamento" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Cedula" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="250" Nullable="false" />
     <Property Name="tipoPersona" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="fechaIngreso" Type="date" />
-    <Property Name="Estado" Type="varchar" MaxLength="25" />
+    <Property Name="Estado" Type="varchar" MaxLength="25" Nullable="false" />
   </EntityType>
   <EntityType Name="Estatus">
     <Key>
@@ -110,6 +110,15 @@
     <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Edificio" Type="varchar" MaxLength="25" Nullable="false" />
   </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Rol" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="ActivosFijosModelStoreContainer">
     <EntitySet Name="ActivoFijo" EntityType="Self.ActivoFijo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CalculoDepreciacion" EntityType="Self.CalculoDepreciacion" Schema="dbo" store:Type="Tables" />
@@ -122,5 +131,6 @@
     <EntitySet Name="TipoActivo" EntityType="Self.TipoActivo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoPago" EntityType="Self.TipoPago" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

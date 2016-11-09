@@ -36,3 +36,4 @@ C:\Users\Janna Aquino R\Desktop\Departamentos\Empleados\obj\Debug\Mantenimientos
 C:\Users\Janna Aquino R\Desktop\Departamentos\Empleados\obj\Debug\Mantenimientos.TipoDeActivo.resources
 C:\Users\Janna Aquino R\Desktop\Departamentos\Empleados\obj\Debug\Mantenimientos.TipoDePago.resources
 C:\Users\Janna Aquino R\Desktop\Departamentos\Empleados\obj\Debug\Mantenimientos.ActivosFijos.resources
+C:\Users\Janna Aquino R\Desktop\Departamentos\Empleados\obj\Debug\Mantenimientos.Login.resources
