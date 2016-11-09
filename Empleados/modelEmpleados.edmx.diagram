@@ -17,6 +17,8 @@
         <EntityTypeShape EntityType="ActivosFijosModel.TipoPagoes" Width="1.5" PointX="2.75" PointY="7.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.Ubicacions" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="ActivosFijosModel.Usuarios" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ActivosFijosModel.Permiso" Width="1.5" PointX="11" PointY="4" />
+        <AssociationConnector Association="ActivosFijosModel.PermisoUsuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

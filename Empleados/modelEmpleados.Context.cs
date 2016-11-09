@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mantenimientos
+namespace Empleados
 {
-    using global::Empleados;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class ActivosFijosEntities : DbContext
     {
         public ActivosFijosEntities()
@@ -38,5 +37,6 @@ namespace Mantenimientos
         public virtual DbSet<TipoPagoes> TipoPagoes { get; set; }
         public virtual DbSet<Ubicacions> Ubicacions { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Permiso> Permiso { get; set; }
     }
 }

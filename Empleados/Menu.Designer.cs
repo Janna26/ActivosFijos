@@ -37,14 +37,6 @@
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEmpleados = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDepartamentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnParámetros = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnUbicaciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTipoDeActivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnActivosFijos = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculoDepreciaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -104,80 +96,15 @@
             // menuMantenimiento
             // 
             this.menuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEmpleados,
-            this.btnDepartamentos,
-            this.btnParámetros,
-            this.btnUbicaciones,
-            this.btnProveedores,
-            this.btnTipoDeActivo,
-            this.btnActivosFijos,
-            this.calculoDepreciaciónToolStripMenuItem,
             this.tipoDePagoToolStripMenuItem});
             this.menuMantenimiento.Name = "menuMantenimiento";
             this.menuMantenimiento.Size = new System.Drawing.Size(106, 20);
             this.menuMantenimiento.Text = "Mantenimientos";
-            this.menuMantenimiento.Click += new System.EventHandler(this.empleadosToolStripMenuItem2_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(186, 22);
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.Click += new System.EventHandler(this.empleadosToolStripMenuItem3_Click);
-            // 
-            // btnDepartamentos
-            // 
-            this.btnDepartamentos.Name = "btnDepartamentos";
-            this.btnDepartamentos.Size = new System.Drawing.Size(186, 22);
-            this.btnDepartamentos.Text = "Departamentos";
-            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
-            // 
-            // btnParámetros
-            // 
-            this.btnParámetros.Name = "btnParámetros";
-            this.btnParámetros.Size = new System.Drawing.Size(186, 22);
-            this.btnParámetros.Text = "Parámetros";
-            this.btnParámetros.Click += new System.EventHandler(this.btnParámetros_Click);
-            // 
-            // btnUbicaciones
-            // 
-            this.btnUbicaciones.Name = "btnUbicaciones";
-            this.btnUbicaciones.Size = new System.Drawing.Size(186, 22);
-            this.btnUbicaciones.Text = "Ubicaciones";
-            this.btnUbicaciones.Click += new System.EventHandler(this.btnUbicaciones_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(186, 22);
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            // 
-            // btnTipoDeActivo
-            // 
-            this.btnTipoDeActivo.Name = "btnTipoDeActivo";
-            this.btnTipoDeActivo.Size = new System.Drawing.Size(186, 22);
-            this.btnTipoDeActivo.Text = "Tipo de Activo";
-            this.btnTipoDeActivo.Click += new System.EventHandler(this.btnTipoDeActivo_Click);
-            // 
-            // btnActivosFijos
-            // 
-            this.btnActivosFijos.Name = "btnActivosFijos";
-            this.btnActivosFijos.Size = new System.Drawing.Size(186, 22);
-            this.btnActivosFijos.Text = "Activos Fijos";
-            this.btnActivosFijos.Click += new System.EventHandler(this.btnActivosFijos_Click);
-            // 
-            // calculoDepreciaciónToolStripMenuItem
-            // 
-            this.calculoDepreciaciónToolStripMenuItem.Name = "calculoDepreciaciónToolStripMenuItem";
-            this.calculoDepreciaciónToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.calculoDepreciaciónToolStripMenuItem.Text = "Cálculo Depreciación";
-            this.calculoDepreciaciónToolStripMenuItem.Click += new System.EventHandler(this.btncalculoDepreciacionAF_Click);
             // 
             // tipoDePagoToolStripMenuItem
             // 
             this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
-            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tipoDePagoToolStripMenuItem.Text = "Tipo de Pago";
             this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
             // 
@@ -189,7 +116,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Activos Fijos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menú_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
@@ -210,14 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuMantenimiento;
-        private System.Windows.Forms.ToolStripMenuItem btnEmpleados;
-        private System.Windows.Forms.ToolStripMenuItem btnDepartamentos;
-        private System.Windows.Forms.ToolStripMenuItem btnParámetros;
-        private System.Windows.Forms.ToolStripMenuItem btnUbicaciones;
-        private System.Windows.Forms.ToolStripMenuItem btnProveedores;
-        private System.Windows.Forms.ToolStripMenuItem btnTipoDeActivo;
-        private System.Windows.Forms.ToolStripMenuItem btnActivosFijos;
-        private System.Windows.Forms.ToolStripMenuItem calculoDepreciaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDePagoToolStripMenuItem;
     }
 }

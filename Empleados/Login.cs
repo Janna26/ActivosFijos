@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,8 @@ namespace Mantenimientos
             txtClave.Text = "";
             txtUsuario.Focus();
         }
-        private void btnIngresar_Click(object sender, EventArgs e)
+
+        private void hacerLogin()
         {
             string usuario = this.txtUsuario.Text;
             string clave = this.txtClave.Text;
@@ -58,7 +60,25 @@ namespace Mantenimientos
             }
 
             //finalmente si todo salio bien
-            new Mantenimientos.Menu().Show();
+
+            Menu menues = new Mantenimientos.Menu();
+            menues.setUsuarioLogeado(usuarioRetornado); // le mando el usuario que me devolvio para luego evaluar sus permisos
+            menues.Show(); // mosstrar el menu
+
+            this.Hide(); // ocultar el formulario de login
+
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            hacerLogin();
+        }
+
+
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                hacerLogin();
         }
     }
 }

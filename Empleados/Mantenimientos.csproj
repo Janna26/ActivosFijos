@@ -115,6 +115,9 @@
     <Compile Include="Parametros.Designer.cs">
       <DependentUpon>Parametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permiso.cs">
+      <DependentUpon>modelEmpleados.tt</DependentUpon>
+    </Compile>
     <Compile Include="Proveedors.cs">
       <DependentUpon>modelEmpleados.tt</DependentUpon>
     </Compile>

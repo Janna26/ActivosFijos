@@ -76,6 +76,23 @@
           <Property Name="RNC" Type="int" Nullable="false" />
           <Property Name="metodoDepreciacion" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Permiso" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ActivosFijos.dbo.PermisoUsuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PermisoUsuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PermisoId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PermisoId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Proveedors">
           <Key>
             <PropertyRef Name="Id" />
@@ -124,6 +141,30 @@
           <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Rol" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <Association Name="FK_PermisoUsuario_ToTable">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="PermisoUsuario" Type="Self.PermisoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisoUsuario">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermisoUsuario_ToTable_1">
+          <End Role="Permiso" Type="Self.Permiso" Multiplicity="1" />
+          <End Role="PermisoUsuario" Type="Self.PermisoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permiso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisoUsuario">
+              <PropertyRef Name="PermisoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ActivosFijosModelStoreContainer">
           <EntitySet Name="ActivoFijoes" EntityType="Self.ActivoFijoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CalculoDepreciacions" EntityType="Self.CalculoDepreciacions" Schema="dbo" store:Type="Tables" />
@@ -132,11 +173,26 @@
           <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MetodoDepreciacions" EntityType="Self.MetodoDepreciacions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parametroes" EntityType="Self.Parametroes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedors" EntityType="Self.Proveedors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoActivoes" EntityType="Self.TipoActivoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoPagoes" EntityType="Self.TipoPagoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ubicacions" EntityType="Self.Ubicacions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermisoUsuario" EntityType="Self.PermisoUsuario" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PermisoUsuario].[UsuarioId] AS [UsuarioId], 
+    [PermisoUsuario].[PermisoId] AS [PermisoId]
+    FROM [dbo].[PermisoUsuario] AS [PermisoUsuario]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_PermisoUsuario_ToTable" Association="Self.FK_PermisoUsuario_ToTable">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="PermisoUsuario" EntitySet="PermisoUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermisoUsuario_ToTable_1" Association="Self.FK_PermisoUsuario_ToTable_1">
+            <End Role="Permiso" EntitySet="Permiso" />
+            <End Role="PermisoUsuario" EntitySet="PermisoUsuario" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -155,6 +211,11 @@
           <EntitySet Name="TipoPagoes" EntityType="ActivosFijosModel.TipoPagoes" />
           <EntitySet Name="Ubicacions" EntityType="ActivosFijosModel.Ubicacions" />
           <EntitySet Name="Usuarios" EntityType="ActivosFijosModel.Usuarios" />
+          <EntitySet Name="Permiso" EntityType="ActivosFijosModel.Permiso" />
+          <AssociationSet Name="PermisoUsuario" Association="ActivosFijosModel.PermisoUsuario">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Permiso" EntitySet="Permiso" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ActivoFijoes">
           <Key>
@@ -274,7 +335,20 @@
           <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Rol" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Permiso" Relationship="ActivosFijosModel.PermisoUsuario" FromRole="Usuarios" ToRole="Permiso" />
         </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Permiso1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuarios" Relationship="ActivosFijosModel.PermisoUsuario" FromRole="Permiso" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="PermisoUsuario">
+          <End Type="ActivosFijosModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+          <End Type="ActivosFijosModel.Permiso" Role="Permiso" Multiplicity="*" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -412,6 +486,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Permiso">
+            <EntityTypeMapping TypeName="ActivosFijosModel.Permiso">
+              <MappingFragment StoreEntitySet="Permiso">
+                <ScalarProperty Name="Permiso1" ColumnName="Permiso" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PermisoUsuario" TypeName="ActivosFijosModel.PermisoUsuario" StoreEntitySet="PermisoUsuario">
+            <EndProperty Name="Permiso">
+              <ScalarProperty Name="Id" ColumnName="PermisoId" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="Id" ColumnName="UsuarioId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
